@@ -17,7 +17,11 @@ func main() {
 		if err != nil {
 			log.Fatal(err)
 		}
+
+		// Send to stdout
 		fmt.Println(string(b))
+
+		fmt.Fprint(w, string(b))
 	})
 
 	log.Printf("Serving on addr %s", *addrPtr)
